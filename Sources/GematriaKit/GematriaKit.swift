@@ -68,6 +68,7 @@ public struct GematriaKit {
 	///   - int: The number to be converted
 	///   - addGeresh: determines if a Geresh ("׳׳") is added to the output
 	/// - Returns: The number converted to hebrew numerals
+	/// > WARNING: This doesn't work correctly for integers greater than 915
 	public func toHebrew(int: Int, addGeresh: Bool = false) -> String {
 		var newStr = ""
 		let string = "\(int)"
