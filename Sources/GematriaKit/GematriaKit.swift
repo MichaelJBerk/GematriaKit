@@ -65,14 +65,14 @@ public struct GematriaKit {
 	
 	
 	
-	public func toGematria(int: Int, quotes: Bool = false) -> String {
+	public func toGematria(int: Int, addGeresh: Bool = false) -> String {
 		var newStr = ""
 		let string = "\(int)"
 		if let special = specials[string] {
 			newStr = special
 			//todo: add geresh
-			if quotes {
-				newStr = addGeresh(string: newStr)
+			if addGeresh {
+				newStr = _addGeresh(string: newStr)
 			}
 			return newStr
 		}
@@ -87,12 +87,13 @@ public struct GematriaKit {
 			let stringToAppend = map["\(power * digit)"]!
 			newStr.append(stringToAppend)
 		}
-		if quotes {
-			newStr = addGeresh(string: newStr)
+		if addGeresh {
+			newStr = _addGeresh(string: newStr)
 		}
 		return newStr
 	}
-	func addGeresh(string: String) -> String {
+	
+	private func _addGeresh(string: String) -> String {
 		guard string.count > 1 else {return string}
 		var newString = string
 		newString.insert(contentsOf: "׳׳", at: newString.index(newString.endIndex, offsetBy: -1))

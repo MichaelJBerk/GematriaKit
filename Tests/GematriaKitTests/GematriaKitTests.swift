@@ -18,7 +18,7 @@ final class GematriaKitTests: XCTestCase {
 		let gkit = GematriaKit()
 		var actual = ""
 		for i in 1...200 {
-			actual.append("\(gkit.toGematria(int: i, quotes: true))\n")
+			actual.append("\(gkit.toGematria(int: i, addGeresh: true))\n")
 		}
 		print(actual)
 		XCTAssertEqual(actual, string1_200Geresh)
