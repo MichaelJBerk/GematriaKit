@@ -9,7 +9,7 @@ final class GematriaKitTests: XCTestCase {
 		let gkit = GematriaKit()
 		var actual = ""
 		for i in 1...100 {
-			actual.append("\(gkit.toGematria(int: i))\n")
+			actual.append("\(gkit.toHebrew(int: i))\n")
 		}
 		print(actual)
         XCTAssertEqual(actual, String1_100)
@@ -18,7 +18,7 @@ final class GematriaKitTests: XCTestCase {
 		let gkit = GematriaKit()
 		var actual = ""
 		for i in 1...200 {
-			actual.append("\(gkit.toGematria(int: i, addGeresh: true))\n")
+			actual.append("\(gkit.toHebrew(int: i, addGeresh: true))\n")
 		}
 		print(actual)
 		XCTAssertEqual(actual, string1_200Geresh)

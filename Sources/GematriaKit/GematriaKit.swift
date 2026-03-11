@@ -63,9 +63,12 @@ public struct GematriaKit {
 		"400":"ת",
 	]
 	
-	
-	
-	public func toGematria(int: Int, addGeresh: Bool = false) -> String {
+	/// Convert the given number to Hebrew Numerals
+	/// - Parameters:
+	///   - int: The number to be converted
+	///   - addGeresh: determines if a Geresh ("׳׳") is added to the output
+	/// - Returns: The number converted to hebrew numerals
+	public func toHebrew(int: Int, addGeresh: Bool = false) -> String {
 		var newStr = ""
 		let string = "\(int)"
 		if let special = specials[string] {
